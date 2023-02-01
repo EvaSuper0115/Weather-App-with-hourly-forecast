@@ -155,6 +155,7 @@ body {
   width: 300px;
   margin: 15px auto;
 }
+
 .hourlyForecastIcons {
   width: 40px;
   display: block;
@@ -162,8 +163,26 @@ body {
 }
 #hours {
   text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-family: "Cutive Mono", monospace;
+  font-size: 12px;
 }
-
+.hourCol {
+  border-radius: 10px;
+  width: 50px;
+  margin: 3px 3px;
+  transition: all 200ms ease-in-out;
+}
+.hourCol:hover {
+  background: rgba(94, 94, 126, 0.2);
+  font-weight: 600;
+}
+.hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 400px;
+}
 #date,
 #last-updated-time,
 #last-updated-title {
@@ -221,6 +240,7 @@ body {
 }
 #forecastWeekdays {
   text-align: right;
+  margin-right: 6px;
 }
 #forecastDate {
   text-align: left;
@@ -228,36 +248,33 @@ body {
   margin-top: 11px;
   color: #79797d;
   font-weight: 500;
+  margin-left: -11px;
 }
 
 .forecastIcon {
   display: inline;
   width: 60px;
-  margin-left: -25px;
+  margin-left: -28px;
   color: #79797d;
 }
-/*
-.forecastDegree {
-  display: inline;
-  font-size: 36px;
-  margin-left: 24px;
-  font-weight: 300;
-}
-*/
+
 #forecastMinCelsius {
   font-size: 25px;
   display: inline;
   opacity: 0.7;
-  margin-right: 16px;
-  margin-left: 2px;
+  margin-right: 7px;
+  margin-left: 10px;
 }
 #forecastMaxCelsius {
   font-size: 25px;
   display: inline;
+  margin-right: -11px;
 }
 .downArrow,
 .upArrow {
   font-size: 10px;
+  position: relative;
+  left: -1px;
 }
 
 #footer {

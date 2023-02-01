@@ -55,6 +55,16 @@ function formatForecastDays(timestamp) {
   return formattedDays;
 }
 
+function formatForecastHours(timestamp) {
+  let hours = new Date(timestamp * 1000);
+  let formattedHours = hours.getHours();
+  if (formattedHours < 10) {
+    return `0${formattedHours}`;
+  } else {
+    return `${formattedHours}`;
+  }
+}
+
 function displayForecast(response) {
   let forecastForEachDay = response.data.daily;
 
@@ -105,17 +115,22 @@ function displayForecast(response) {
   let forecastHourly = `<div class="row">`;
 
   forecastForEachHour.forEach(function (forecastHour, index) {
-    if (index < 4) {
+    if (index < 6 && index > 0) {
       forecastHourly =
         forecastHourly +
         `<div class="hourCol col">
-  <div id="hours"> 18:00</div>
-    <img id="hourlyIcons" class="hourlyForecastIcons" src="https://openweathermap.org/img/wn/04n@2x.png" 
-            alt="icon-id-04n">
+  <div id="hours"> ${formatForecastHours(forecastHour.dt)}:00</div>
+    <img id="hourlyIcons" class="hourlyForecastIcons" src="https://openweathermap.org/img/wn/${
+      forecastHour.weather[0].icon
+    }@2x.png" 
+            alt="icon-id-${forecastHour.weather[0].icon}">
 </div>
+
       `;
     }
   });
+  forecastHourly = forecastHourly + `</div>`;
+  hourlyForecastElement.innerHTML = forecastHourly;
 }
 
 function sendCoordToForecast(coords) {
