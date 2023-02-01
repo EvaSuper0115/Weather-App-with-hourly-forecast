@@ -81,7 +81,7 @@ function displayForecast(response) {
             src="https://openweathermap.org/img/wn/${
               forecastDay.weather[0].icon
             }@2x.png" 
-            alt="icon-id-04n">
+            alt="icon-id-${forecastDay.weather[0].icon}">
 
             <h5 id="forecastMinCelsius" class="card-text"><i class="downArrow fa-solid fa-down-long"></i>${Math.round(
               forecastDay.temp.min
@@ -98,6 +98,24 @@ function displayForecast(response) {
   });
   forecastHTML = forecastHTML + ``;
   forecastElement.innerHTML = forecastHTML;
+
+  let forecastForEachHour = response.data.hourly;
+  console.log(forecastForEachHour);
+  let hourlyForecastElement = document.querySelector("#hourlyForecastRow");
+  let forecastHourly = `<div class="row">`;
+
+  forecastForEachHour.forEach(function (forecastHour, index) {
+    if (index < 4) {
+      forecastHourly =
+        forecastHourly +
+        `<div class="hourCol col">
+  <div id="hours"> 18:00</div>
+    <img id="hourlyIcons" class="hourlyForecastIcons" src="https://openweathermap.org/img/wn/04n@2x.png" 
+            alt="icon-id-04n">
+</div>
+      `;
+    }
+  });
 }
 
 function sendCoordToForecast(coords) {

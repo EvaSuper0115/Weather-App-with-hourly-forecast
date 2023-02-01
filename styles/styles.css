@@ -151,6 +151,19 @@ body {
   text-transform: capitalize;
 }
 
+#hourlyForecastRow {
+  width: 300px;
+  margin: 15px auto;
+}
+.hourlyForecastIcons {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+}
+#hours {
+  text-align: center;
+}
+
 #date,
 #last-updated-time,
 #last-updated-title {
