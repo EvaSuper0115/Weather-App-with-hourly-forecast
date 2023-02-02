@@ -80,29 +80,30 @@ function displayForecast(response) {
        <div class="col-3">
          <div class="nextDays">
           <h5 id="forecastDate">${formatForecastDates(forecastDay.dt)} </h5>
-          <h5 id="forecastWeekdays"> ${formatForecastDays(forecastDay.dt)}</h5>
+          <h5 id="forecastWeekdays"> ${formatForecastDays(forecastDay.dt)}
          </div>
        </div>
-       <div class="col-6">
-          <div class="nextDays-weather">
-           
+       
+         
+           <div class="col-1">
                <img id="weatherForecastIcons" class="forecastIcon card-text" 
          
             src="https://openweathermap.org/img/wn/${
               forecastDay.weather[0].icon
             }@2x.png" 
             alt="icon-id-${forecastDay.weather[0].icon}">
-
+            </div>
+            <div class="col-5">
             <h5 id="forecastMinCelsius" class="card-text"><i class="downArrow fa-solid fa-down-long"></i>${Math.round(
               forecastDay.temp.min
             )}°</h5>
-
+ 
              <h5 id="forecastMaxCelsius" class="card-text"><i class="upArrow fa-solid fa-up-long"></i>${Math.round(
                forecastDay.temp.max
              )}°</h5>
            </div>
          <div class="col-1"></div>
-       </div>
+      
      </div>`;
     }
   });
