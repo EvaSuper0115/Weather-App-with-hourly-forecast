@@ -111,7 +111,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 
   let forecastForEachHour = response.data.hourly;
-  console.log(forecastForEachHour);
+
   let hourlyForecastElement = document.querySelector("#hourlyForecastRow");
   let forecastHourly = `<div class="row">`;
 
