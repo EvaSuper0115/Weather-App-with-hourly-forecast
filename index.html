@@ -40,15 +40,19 @@
 
  <body>
    <div class="container">
+    <button id="switch-mode-button"><i class="fa-solid fa-toggle-on"></i> </button>
+    <div class="row">
+      <div class="col-lg-6">
+         
      <div class="pagePaddingWeatherToday">
         
-        <button id="switch-mode-button"><i class="fa-solid fa-toggle-on"></i> </button>
+       
         
 
        <div class="row">
-         <div class="col-1"></div>
+         
           
-          <div class="col-8">
+          <div class="col-sm-10">
           <form id="city-search" class="weather-search-form" autocomplete="off">
             
              <input
@@ -59,7 +63,7 @@
                 autofocus="on"
               /> 
             </div>
-            <div class="col-2">
+            <div class="col-sm-2 searchIcon">
             <button class="searchButton btn" type="submit">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -91,15 +95,15 @@
             alt="icon-id-04n">
   
        
-        <div class="row">
-          <div class="col">
+        <div class="row weatherDetailsWholeRow">
+          <div class="col-sm-6 weatherDetailsColum">
             <div class="weatherDetails">
               <p id="weatherDetail-1"></p>
               <p id="weatherDetail-2"></p>
               <p id="weatherDetail-3"></p>
             </div>
           </div>
-          <div class="col">
+          <div class="col-sm-6 degreeDetailsColum">
             <div class="degreeDetails">
             <p id="lowest-degree"> </p>
             <p id="highest-degree"> </p>
@@ -107,29 +111,31 @@
            </div>
           </div>
         </div>
-
- <hr>  
- <div class="hourlyTitle"><i class="fa-solid fa-clock"></i></div>
-<div id="hourlyForecastRow"> 
-
-</div>
-
-
-        <div id="last-updated-title">last updated</div>
+         <div id="last-updated-title">last updated</div>
       <div id="date"></div>
       <div id="last-updated-time"></div>
-      </div>
-        
-    
+</div>
+<div class="pagePaddingWeatherNextFiveDays">
+ <div class="hourlyTitle"><i class="fa-solid fa-clock"></i>HOURLY FORECAST</div>
+<div id="hourlyForecastRow"></div> 
+</div>
+</div>
+
+<div class="col-lg-6">
+
+
 
       <div class="pagePaddingWeatherNextFiveDays">
 
-        <p class="forecastPageTitle">5-DAY-FORECAST</p>
+        <p class="forecastPageTitle"><i class="fa-solid fa-arrow-trend-up"></i>WEEKLY FORECAST</p>
        
         <div id="forecast-for-each-day"></div>
 
-        <p id="footer">Designed and Coded by <a href="mailto:2021toontaieva@gmail.com" target="_blank">On Tai To <i class="fa-solid fa-envelope"></i></a> and is <a href="https://github.com/EvaSuper0115/Weather-App-with-hourly-forecast" target="_blank">open-sourced on GitHub </a>and <a href="https://app.netlify.com/sites/warm-biscochitos-e51656/overview" target="_blank">hosted on Netlify</a></p>
+       
       </div>
+      </div>
+    </div>
+     <p id="footer">Designed and Coded by <a href="mailto:2021toontaieva@gmail.com" target="_blank">On Tai To <i class="fa-solid fa-envelope"></i></a> and is <a href="https://github.com/EvaSuper0115/Weather-App-with-hourly-forecast" target="_blank">open-sourced on GitHub </a>and <a href="https://app.netlify.com/sites/warm-biscochitos-e51656/overview" target="_blank">hosted on Netlify</a></p>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

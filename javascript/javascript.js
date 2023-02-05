@@ -72,12 +72,12 @@ function displayForecast(response) {
   let forecastHTML = ``;
 
   forecastForEachDay.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 7) {
       forecastHTML =
         forecastHTML +
         `<div class="row forecastWholeRow">
-       <div class="col-2"></div>
-       <div class="col-3">
+      
+       <div class="col-5 forecastDatesRow">
          <div class="nextDays">
           <h5 id="forecastDate">${formatForecastDates(forecastDay.dt)} </h5>
           <h5 id="forecastWeekdays"> ${formatForecastDays(forecastDay.dt)}
@@ -85,7 +85,7 @@ function displayForecast(response) {
        </div>
        
          
-           <div class="col-1">
+           <div class="col-2 forecastIconRow">
                <img id="weatherForecastIcons" class="forecastIcon card-text" 
          
             src="https://openweathermap.org/img/wn/${
@@ -93,7 +93,7 @@ function displayForecast(response) {
             }@2x.png" 
             alt="icon-id-${forecastDay.weather[0].icon}">
             </div>
-            <div class="col-5">
+            <div class="col-5 forecastDegreeRow">
             <h5 id="forecastMinCelsius" class="card-text"><i class="downArrow fa-solid fa-down-long"></i>${Math.round(
               forecastDay.temp.min
             )}°</h5>
@@ -102,7 +102,7 @@ function displayForecast(response) {
                forecastDay.temp.max
              )}°</h5>
            </div>
-         <div class="col-1"></div>
+         
       
      </div>`;
     }
@@ -116,10 +116,10 @@ function displayForecast(response) {
   let forecastHourly = `<div class="row">`;
 
   forecastForEachHour.forEach(function (forecastHour, index) {
-    if (index < 6 && index > 0) {
+    if (index < 7 && index > 0) {
       forecastHourly =
         forecastHourly +
-        `<div class="hourCol col">
+        `<div class="hourCol col-lg-2">
   <div id="hours"> ${formatForecastHours(forecastHour.dt)}:00</div>
     <img id="hourlyIcons" class="hourlyForecastIcons" src="https://openweathermap.org/img/wn/${
       forecastHour.weather[0].icon
